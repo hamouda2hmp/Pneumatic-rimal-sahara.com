@@ -8,8 +8,6 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
-
     <title>Pneumatique Rimal Sahara | رمال الصحراء</title> 
 
      
@@ -18,235 +16,11 @@
 
      
 
-    <style> 
-
-        :root { 
-
-            --gold: #D4AF37; 
-
-            --dark: #0a0a0a; 
-
-            --card-bg: rgba(26, 26, 26, 0.95); 
-
-            --text-white: #ffffff; 
-
-        } 
-
- 
-
-        * { margin: 0; padding: 0; box-sizing: border-box; } 
-
-        body { font-family: 'Cairo', sans-serif; background-color: var(--dark); color: var(--text-white); line-height: 1.6; } 
-
- 
-
-        /* --- Blurred Header with Shop Photo --- */ 
-
-        .hero { 
-
-            position: relative; 
-
-            height: 60vh; 
-
-            display: flex; 
-
-            flex-direction: column; 
-
-            justify-content: center; 
-
-            align-items: center; 
-
-            text-align: center; 
-
-            overflow: hidden; 
-
-        } 
-
- 
-
-        .hero-bg { 
-
-            position: absolute; 
-
-            top: 0; left: 0; width: 100%; height: 100%; 
-
-            background-image: url('2696.jpg');  
-
-            background-size: cover; 
-
-            background-position: center; 
-
-            filter: blur(8px) brightness(0.4);  
-
-            z-index: -1; 
-
-            transform: scale(1.1); 
-
-        } 
-
- 
-
-        .hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); color: var(--gold); font-weight: 900; } 
-
-        .subtitle { font-size: 1.2rem; margin-bottom: 25px; opacity: 0.8; } 
-
- 
-
-        /* --- Social Icons --- */ 
-
-        .social-container { display: flex; gap: 20px; z-index: 10; justify-content: center; flex-wrap: wrap; } 
-
-        .icon-wrap {  
-
-            width: 75px; height: 75px; background: white; border-radius: 18px;  
-
-            padding: 8px; margin-bottom: 5px; box-shadow: 0 8px 15px rgba(0,0,0,0.5);  
-
-        } 
-
-        .icon-wrap img { width: 100%; height: 100%; object-fit: contain; } 
-
-        .social-item { text-decoration: none; color: white; text-align: center; font-weight: bold; transition: 0.3s; } 
-
-        .social-item:hover { transform: translateY(-5px); } 
-
- 
-
-        /* --- Media Section: Video & Fixed Map --- */ 
-
-        .media-section { 
-
-            display: flex; 
-
-            padding: 40px 10%; 
-
-            gap: 20px; 
-
-            justify-content: center; 
-
-            flex-wrap: wrap; 
-
-        } 
-
- 
-
-        .video-container { 
-
-            flex: 1; 
-
-            min-width: 280px; 
-
-            max-width: 320px; 
-
-            aspect-ratio: 9/16;  
-
-            border: 2px solid var(--gold); 
-
-            border-radius: 20px; 
-
-            overflow: hidden; 
-
-        } 
-
- 
-
-        .map-container { 
-
-            flex: 2; 
-
-            min-width: 320px; 
-
-            height: 570px;  
-
-            border: 2px solid var(--gold); 
-
-            border-radius: 20px; 
-
-            overflow: hidden; 
-
-            background: #222; 
-
-        } 
-
- 
-
-        video, iframe { width: 100%; height: 100%; border: none; } 
-
- 
-
-        /* --- Full Width Shop Banner --- */ 
-
-        .shop-banner { 
-
-            width: 80%; 
-
-            margin: 0 auto 40px; 
-
-            border-radius: 20px; 
-
-            overflow: hidden; 
-
-            border: 2px solid var(--gold); 
-
-        } 
-
-        .shop-banner img { width: 100%; height: auto; display: block; } 
-
- 
-
-        /* --- Contact Form --- */ 
-
-        .contact-section { padding: 40px 10%; } 
-
-        .contact-container { 
-
-            max-width: 800px; 
-
-            margin: 0 auto; 
-
-            background: var(--card-bg); 
-
-            padding: 30px; 
-
-            border-radius: 20px; 
-
-            border: 1px solid var(--gold); 
-
-        } 
-
-        .contact-container h2 { color: var(--gold); text-align: center; margin-bottom: 20px; } 
-
-        input, select, textarea { 
-
-            width: 100%; padding: 12px; margin-bottom: 15px; 
-
-            background: #222; border: 1px solid #444; color: white; 
-
-            border-radius: 8px; font-family: 'Cairo'; outline: none; 
-
-        } 
-
-        input:focus { border-color: var(--gold); } 
-
-        .submit-btn { 
-
-            width: 100%; padding: 15px; background: var(--gold); 
-
-            border: none; border-radius: 8px; font-weight: 900; cursor: pointer; transition: 0.3s; 
-
-        } 
-
-        .submit-btn:hover { background: #b8952d; } 
-
- 
-
-        footer { text-align: center; padding: 40px; opacity: 0.6; font-size: 0.9rem; border-top: 1px solid #222; } 
-
-    </style> 
+    <link rel="stylesheet" href="style.css"> 
 
 </head> 
 
-<body> 
+<body oncontextmenu="return false;"> 
 
  
 
@@ -296,7 +70,7 @@
 
         <div class="video-container"> 
 
-            <video controls> 
+            <video controls poster="2696.jpg"> 
 
                 <source src="shop_video.mp4" type="video/mp4"> 
 
@@ -308,7 +82,7 @@
 
             <iframe  
 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.888768564115!2d-11.673898684956!3d26.747101183199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x22122745577c9117!2sPneumatique%20Rimal%20Sahara!5e0!3m2!1sen!2sma!4v1708527000000!5m2!1sen!2sma"  
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3550.603362143161!2d-11.675!3d26.741!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDQ0JzI3LjYiTiAxMcKwNDAnMzAuMCJX!5e0!3m2!1sen!2sma!4v1700000000000"  
 
                 allowfullscreen="" loading="lazy"> 
 
@@ -322,7 +96,7 @@
 
     <div class="shop-banner"> 
 
-        <img src="2696.jpg" alt="Pneumatique Rimal Sahara Front View"> 
+        <img src="2696.jpg" alt="Pneumatique Rimal Sahara Front"> 
 
     </div> 
 
