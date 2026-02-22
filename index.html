@@ -1,1 +1,181 @@
 
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pneumatique Rimal Sahara | رمال الصحراء</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --dark: #0a0a0a;
+            --card-bg: rgba(26, 26, 26, 0.95);
+            --text-white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Cairo', sans-serif; background-color: var(--dark); color: var(--text-white); line-height: 1.6; }
+
+        /* --- Header with Blurred Shop Image --- */
+        .hero {
+            position: relative;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            /* Adjusted to look in your 'img' folder */
+            background-image: url('img/photo_5821136414165372.jpg'); 
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px) brightness(0.4); 
+            z-index: -1;
+            transform: scale(1.1);
+        }
+
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 4rem); color: var(--gold); font-weight: 900; }
+        .subtitle { font-size: 1.2rem; margin-bottom: 25px; opacity: 0.8; }
+
+        /* --- Social Icons Section --- */
+        .social-container { display: flex; gap: 20px; z-index: 10; justify-content: center; flex-wrap: wrap; }
+        .icon-wrap { 
+            width: 75px; height: 75px; background: white; border-radius: 18px; 
+            padding: 8px; margin-bottom: 5px; box-shadow: 0 8px 15px rgba(0,0,0,0.5); 
+        }
+        .icon-wrap img { width: 100%; height: 100%; object-fit: contain; }
+        .social-item { text-decoration: none; color: white; text-align: center; font-weight: bold; }
+
+        /* --- Media: Video & Map --- */
+        .media-section {
+            display: flex;
+            padding: 40px 10%;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .video-container {
+            flex: 1;
+            min-width: 280px;
+            max-width: 320px;
+            aspect-ratio: 9/16; 
+            border: 2px solid var(--gold);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .map-container {
+            flex: 2;
+            min-width: 320px;
+            height: 570px; 
+            border: 2px solid var(--gold);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        video, iframe { width: 100%; height: 100%; border: none; }
+
+        /* --- Main Banner --- */
+        .shop-banner {
+            width: 80%;
+            margin: 0 auto 40px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid var(--gold);
+        }
+        .shop-banner img { width: 100%; height: auto; display: block; }
+
+        /* --- Contact --- */
+        .contact-section { padding: 40px 10%; }
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid var(--gold);
+        }
+        .contact-container h2 { color: var(--gold); text-align: center; margin-bottom: 20px; }
+        input, textarea {
+            width: 100%; padding: 12px; margin-bottom: 15px;
+            background: #222; border: 1px solid #444; color: white;
+            border-radius: 8px; font-family: 'Cairo';
+        }
+        .submit-btn {
+            width: 100%; padding: 15px; background: var(--gold);
+            border: none; border-radius: 8px; font-weight: 900; cursor: pointer;
+        }
+
+        footer { text-align: center; padding: 40px; opacity: 0.6; border-top: 1px solid #222; }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <h1>رمال الصحراء</h1>
+        <p class="subtitle">Pneumatique Rimal Sahara - السمارة</p>
+        
+        <div class="social-container">
+            <a href="https://wa.me/21266651743" class="social-item" target="_blank">
+                <div class="icon-wrap"><img src="img/photo_5821136414165372.jpg" alt="واتساب"></div>
+                <span>واتساب</span>
+            </a>
+            <a href="https://www.facebook.com/share/1C78erTaT3/" class="social-item" target="_blank">
+                <div class="icon-wrap"><img src="img/photo_5821136414165372.jpg" alt="فيسبوك"></div>
+                <span>فيسبوك</span>
+            </a>
+            <a href="https://www.instagram.com/pneumatique_rimalsahara/" class="social-item" target="_blank">
+                <div class="icon-wrap"><img src="img/photo_5821136414165372.jpg" alt="انستقرام"></div>
+                <span>انستقرام</span>
+            </a>
+        </div>
+    </header>
+
+    <div class="media-section">
+        <div class="video-container">
+            <video controls poster="img/photo_5821136414165372.jpg">
+                <source src="video/document_5821136413705.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.1171875!2d-11.67!3d26.74" 
+                allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+    </div>
+
+    <div class="shop-banner">
+        <img src="img/photo_5821136414165372.jpg" alt="Shop Front">
+    </div>
+
+    <section class="contact-section">
+        <div class="contact-container">
+            <h2>اتصل بنا</h2>
+            <form action="https://formspree.io/f/xaqdpewv" method="POST">
+                <input type="text" name="name" placeholder="الاسم" required>
+                <input type="tel" name="phone" placeholder="رقم الهاتف" required>
+                <textarea name="message" placeholder="رسالتك" rows="4"></textarea>
+                <button type="submit" class="submit-btn">إرسال</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>شارع الجيش الملكي بالسمارة</p>
+        <p>© 2026 Pneumatique Rimal Sahara</p>
+    </footer>
+
+</body>
+</html>
