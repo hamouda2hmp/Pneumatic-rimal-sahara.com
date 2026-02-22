@@ -8,25 +8,23 @@
     <style>
         :root { --gold: #D4AF37; --dark: #0a0a0a; --text-white: #ffffff; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Cairo', sans-serif; background-color: var(--dark); color: var(--text-white); }
+        body { font-family: 'Cairo', sans-serif; background-color: var(--dark); color: var(--text-white); line-height: 1.6; }
 
-        /* --- Header with Blurred Image --- */
-        .hero { position: relative; height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden; }
+        .hero { position: relative; height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; overflow: hidden; }
         .hero-bg { 
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
             background-image: url('img/photo_5821136414165372.jpg'); 
-            background-size: cover; background-position: center; filter: blur(8px) brightness(0.4); z-index: -1;
+            background-size: cover; background-position: center; filter: blur(8px) brightness(0.4); z-index: -1; transform: scale(1.1);
         }
-        .hero h1 { font-size: 3rem; color: var(--gold); font-weight: 900; }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 4rem); color: var(--gold); font-weight: 900; }
 
-        /* --- Social Icons --- */
-        .social-container { display: flex; gap: 20px; z-index: 10; justify-content: center; margin-top: 20px; }
-        .icon-wrap { width: 75px; height: 75px; background: white; border-radius: 18px; padding: 10px; }
-        .icon-wrap img { width: 100%; height: 100%; object-fit: contain; }
-        .social-item { text-decoration: none; color: white; text-align: center; font-weight: bold; }
+        /* Social Container - Fixed Instagram Button */
+        .social-container { display: flex; gap: 20px; z-index: 10; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+        .social-item { text-decoration: none; color: white; text-align: center; font-weight: bold; transition: 0.3s; }
+        .icon-wrap { width: 75px; height: 75px; background: white; border-radius: 18px; padding: 10px; margin-bottom: 5px; box-shadow: 0 8px 15px rgba(0,0,0,0.5); }
+        .icon-wrap img { width: 100%; height: 100%; object-fit: contain; display: block; }
 
-        /* --- Media: Video & Map --- */
-        .media-section { display: flex; padding: 40px 10%; gap: 20px; flex-wrap: wrap; justify-content: center; }
+        .media-section { display: flex; padding: 40px 10%; gap: 20px; justify-content: center; flex-wrap: wrap; }
         .video-container { flex: 1; min-width: 280px; max-width: 320px; aspect-ratio: 9/16; border: 2px solid var(--gold); border-radius: 20px; overflow: hidden; }
         .map-container { flex: 2; min-width: 320px; height: 500px; border: 2px solid var(--gold); border-radius: 20px; overflow: hidden; }
         video, iframe { width: 100%; height: 100%; border: none; }
@@ -34,23 +32,30 @@
         .shop-banner { width: 80%; margin: 0 auto 40px; border-radius: 20px; overflow: hidden; border: 2px solid var(--gold); }
         .shop-banner img { width: 100%; height: auto; display: block; }
 
-        .contact-container { max-width: 600px; margin: 40px auto; padding: 30px; border: 1px solid var(--gold); border-radius: 20px; text-align: center; }
-        input, textarea { width: 100%; padding: 12px; margin-bottom: 15px; background: #222; border: 1px solid #444; color: white; border-radius: 8px; }
-        .submit-btn { width: 100%; padding: 15px; background: var(--gold); border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
+        .contact-container { max-width: 800px; margin: 40px auto; background: rgba(26,26,26,0.95); padding: 30px; border-radius: 20px; border: 1px solid var(--gold); }
+        input, textarea { width: 100%; padding: 12px; margin-bottom: 15px; background: #222; border: 1px solid #444; color: white; border-radius: 8px; font-family: 'Cairo'; }
+        .submit-btn { width: 100%; padding: 15px; background: var(--gold); border: none; border-radius: 8px; font-weight: 900; cursor: pointer; }
+        footer { text-align: center; padding: 40px; opacity: 0.6; border-top: 1px solid #222; }
     </style>
 </head>
 <body>
+
     <header class="hero">
         <div class="hero-bg"></div>
         <h1>رمال الصحراء</h1>
+        
         <div class="social-container">
-            <a href="https://wa.me/21266651743" class="social-item">
-                <div class="icon-wrap"><img src="img/photo_5821136414165372.jpg" alt="WhatsApp"></div>
-                <span>واتساب</span>
+            <a href="https://www.instagram.com/pneumatique_rimalsahara/" class="social-item" target="_blank">
+                <div class="icon-wrap"><img src="img/photo_5821136414165372.jpg" alt="Instagram"></div>
+                <span>انستغرام</span>
             </a>
-            <a href="https://www.facebook.com/share/1C78erTaT3/" class="social-item">
+            <a href="https://www.facebook.com/share/1C78erTaT3/" class="social-item" target="_blank">
                 <div class="icon-wrap"><img src="img/photo_5821136414165372.jpg" alt="Facebook"></div>
                 <span>فيسبوك</span>
+            </a>
+            <a href="https://wa.me/21266651743" class="social-item" target="_blank">
+                <div class="icon-wrap"><img src="img/photo_5821136414165372.jpg" alt="WhatsApp"></div>
+                <span>واتساب</span>
             </a>
         </div>
     </header>
@@ -62,22 +67,28 @@
             </video>
         </div>
         <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.4552467355154!2d-11.6744!3d26.7456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDQ0JzQ0LjIiTiAxMcKwNDAnMjcuOCJX!5e0!3m2!1sen!2sma!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3550.603362143003!2d-11.6744888!3d26.7570451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDQ1JzI1LjQiTiAxMcKwNDAnMjguMiJX!5e0!3m2!1sar!2sma!4v1700000000000!5m2!1sar!2sma" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
 
     <div class="shop-banner">
-        <img src="img/photo_5821136414165372.jpg" alt="Shop Banner">
+        <img src="img/photo_5821136414165372.jpg" alt="Shop Front">
     </div>
 
-    <div class="contact-container">
-        <h2>اتصل بنا</h2>
+    <section class="contact-container">
+        <h2 style="text-align:center; color:var(--gold); margin-bottom:20px;">اتصل بنا</h2>
         <form action="https://formspree.io/f/xaqdpewv" method="POST">
             <input type="text" name="name" placeholder="الاسم" required>
             <input type="tel" name="phone" placeholder="رقم الهاتف" required>
             <textarea name="message" placeholder="رسالتك" rows="4"></textarea>
             <button type="submit" class="submit-btn">إرسال</button>
         </form>
-    </div>
+    </section>
+
+    <footer>
+        <p>شارع الجيش الملكي بالسمارة</p>
+        <p>© 2026 Pneumatique Rimal Sahara</p>
+    </footer>
+
 </body>
 </html>
